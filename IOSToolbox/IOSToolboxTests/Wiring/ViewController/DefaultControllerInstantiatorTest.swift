@@ -10,14 +10,14 @@ class DefaultControllerInstantiatorTest: XCTestCase {
         XCTAssertNotNil(controller.label)
     }
     
-    func testFailsInstantiatingNibViewControllerThatDoesntExist() {
+    func testFailsToInstantiateNibViewControllerThatDoesntExist() {
         let instantiator = DefaultControllerInstantiator.nib(DefaultControllerNamingStrategy.namedExplicitly("FooBar"))
-        do {
-            try instantiator.instantiate().loadViewIfNeeded()
-        } catch  {
-            
-        }
-//        XCTAssertThrowsError()
+        SwiftTryCatch.try({
+            instantiator.instantiate().loadViewIfNeeded()
+            XCTAssertFalse(false, "Should have thrown an exception")
+        }, catch: { (error) in
+            XCTAssertEqual("NSInternalInconsistencyException", error.name.rawValue)
+        })
     }
     
     func testInstantiatesStoryboardViewController() {
@@ -27,4 +27,14 @@ class DefaultControllerInstantiatorTest: XCTestCase {
         XCTAssertNotNil(controller.toggle)
     }
     
+    func testFailsToInstantiatesStoryboardViewController() {
+        let instantiator = DefaultControllerInstantiator.storyboard(DefaultControllerNamingStrategy.namedExplicitly("FooBar"))
+        SwiftTryCatch.try({
+            instantiator.instantiate().loadViewIfNeeded()
+            XCTAssertFalse(false, "Should have thrown an exception")
+        }, catch: { (error) in
+            XCTAssertEqual("NSInvalidArgumentException", error.name.rawValue)
+        })
+    }
+
 }

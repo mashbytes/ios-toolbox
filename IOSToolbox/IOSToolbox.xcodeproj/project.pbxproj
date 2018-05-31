@@ -36,6 +36,7 @@
 		606D24C620BE82C3003B814C /* AppDelegateSupervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D24C320BE82C3003B814C /* AppDelegateSupervisor.swift */; };
 		606D24C720BE82C3003B814C /* Array+UIApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D24C420BE82C3003B814C /* Array+UIApplicationDelegate.swift */; };
 		606D24C820BE82C3003B814C /* Array+UIApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606D24C420BE82C3003B814C /* Array+UIApplicationDelegate.swift */; };
+		60F9DADF20BFCB6300B6B365 /* SwiftTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F9DADD20BFCB6200B6B365 /* SwiftTryCatch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,9 @@
 		606D24BB20BE826A003B814C /* EnglandWorldCupWinnersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnglandWorldCupWinnersViewController.xib; sourceTree = "<group>"; };
 		606D24C320BE82C3003B814C /* AppDelegateSupervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSupervisor.swift; sourceTree = "<group>"; };
 		606D24C420BE82C3003B814C /* Array+UIApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+UIApplicationDelegate.swift"; sourceTree = "<group>"; };
+		60F9DADC20BFCB6100B6B365 /* IOSToolboxTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSToolboxTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		60F9DADD20BFCB6200B6B365 /* SwiftTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftTryCatch.m; sourceTree = "<group>"; };
+		60F9DADE20BFCB6300B6B365 /* SwiftTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftTryCatch.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +126,12 @@
 		606D248B20BE81CE003B814C /* IOSToolboxTests */ = {
 			isa = PBXGroup;
 			children = (
+				60F9DADE20BFCB6300B6B365 /* SwiftTryCatch.h */,
+				60F9DADD20BFCB6200B6B365 /* SwiftTryCatch.m */,
 				606D24C920BE82D4003B814C /* Bootstrap */,
 				606D24B520BE8253003B814C /* ViewController */,
 				606D248E20BE81CE003B814C /* Info.plist */,
+				60F9DADC20BFCB6100B6B365 /* IOSToolboxTests-Bridging-Header.h */,
 			);
 			path = IOSToolboxTests;
 			sourceTree = "<group>";
@@ -248,6 +255,7 @@
 					};
 					606D248620BE81CE003B814C = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -320,6 +328,7 @@
 				606D24A820BE823D003B814C /* ControllerConfigurator.swift in Sources */,
 				606D24BF20BE826A003B814C /* EnglandWorldCupWinnersViewController.swift in Sources */,
 				606D24B420BE823D003B814C /* ProvidesControllerInstantiator.swift in Sources */,
+				60F9DADF20BFCB6300B6B365 /* SwiftTryCatch.m in Sources */,
 				606D24C020BE826A003B814C /* EnglandWorldCupLosersViewController.swift in Sources */,
 				606D24BC20BE826A003B814C /* DefaultControllerNamingStrategyTest.swift in Sources */,
 				606D24B020BE823D003B814C /* DefaultControllerNamingStrategy.swift in Sources */,
@@ -515,6 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IOSToolboxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,6 +534,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mashbytes.IOSToolboxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOSToolboxTests/IOSToolboxTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -533,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IOSToolboxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -542,6 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mashbytes.IOSToolboxTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOSToolboxTests/IOSToolboxTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
