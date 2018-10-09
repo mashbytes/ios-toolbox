@@ -1,6 +1,8 @@
 import Foundation
+import UIKit
 
 protocol ProvidesControllerConfigurator {
+    associatedtype ControllerType: UIViewController
     
-    static var configurator: ControllerConfigurator { get }
+    static var configurator: AnyControllerConfigurator<ControllerType> { get }
 }
