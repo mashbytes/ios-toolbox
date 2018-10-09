@@ -13,7 +13,7 @@ open class AppDelegateSupervisor: NSObject {
 
 extension AppDelegateSupervisor: UIApplicationDelegate {
     
-	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+	public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 	    return delegates.application(application, didFinishLaunchingWithOptions: launchOptions)
 	}
 
@@ -25,7 +25,7 @@ extension AppDelegateSupervisor: UIApplicationDelegate {
 	    delegates.applicationWillResignActive(application)
 	}
 
-	public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+	public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
 	    return delegates.application(app, open: url, options: options)
 	}
 

@@ -3,7 +3,7 @@ import UIKit
 
 extension Array where Element: UIApplicationDelegate {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool  {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool  {
         return reduce(true) { acc, delegate in
             return acc && (delegate.application?(application, didFinishLaunchingWithOptions: launchOptions) ?? true)
         }
@@ -21,7 +21,7 @@ extension Array where Element: UIApplicationDelegate {
         }
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return reduce(true) { acc, delegate in
             return acc && (delegate.application?(app, open: url, options: options) ?? true)
         }
