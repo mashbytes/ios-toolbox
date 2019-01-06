@@ -22,8 +22,9 @@ extension Array where Element: UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return reduce(true) { acc, delegate in
-            return acc && (delegate.application?(app, open: url, options: options) ?? true)
+        return reduce(false) { acc, delegate in
+            let opened = delegate.application?(app, open: url, options: options) ?? false
+            return acc || opened
         }
     }
     
